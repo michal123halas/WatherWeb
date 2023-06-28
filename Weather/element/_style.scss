@@ -1,0 +1,57 @@
+@use "mixin";
+@use "variabels";
+
+h1{
+  padding: 18px;
+  text-align: center;
+  font-size: 1.75rem;
+  background-color: variabels.$color-primary;
+
+}
+
+.container{
+  display: flex;
+  gap: 35px;
+  padding: 30px;
+  .weather-input{
+  @include mixin.weather-input(0 17px, 1px solid #ccc, 1.07rem);
+    width: 550px;
+    height: variabels.$height;
+    input{
+      @include mixin.weather-input(0 17px, 1px solid #ccc, 1.07rem);
+      height: variabels.$height;
+      margin: 10px 0 20px 0!important;
+
+    }
+    button{
+      @include mixin.weather-input(10px 0,none, 1rem );
+      cursor: pointer;
+      color: #fff;
+      background-color: variabels.$color-primary;
+
+    }
+    .separator{
+      height: 1px;
+      width: 100%;
+      margin: 25px 0;
+      background-color: #bbb;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      &::before{
+        content: "or";
+        font-size: 1.18rem;
+        padding: 0 15px;
+        background-color: variabels.$color-layout;
+        margin-top: -4px;
+      }
+    }
+
+
+  }
+
+  .weather-data{
+    width: 100%;
+  }
+
+}

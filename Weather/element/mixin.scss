@@ -1,0 +1,10 @@
+@mixin weather-input($padding,$border,$font-size){
+width: 100%;
+  outline: none;
+  padding:$padding;
+  font-size: $font-size;
+  border:$border;
+  border-radius: 4px;
+  //margin: 10px 0 20px 0;
+
+}
