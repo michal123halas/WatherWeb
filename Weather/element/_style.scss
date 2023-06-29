@@ -1,6 +1,7 @@
 @use "mixin";
 @use "variabels";
 
+
 h1{
   padding: 18px;
   text-align: center;
@@ -14,20 +15,19 @@ h1{
   gap: 35px;
   padding: 30px;
   .weather-input{
-  @include mixin.weather-input(0 17px, 1px solid #ccc, 1.07rem);
+  @include mixin.weather-input(0 17px, 1px solid variabels.$color-light-wiht, 1.07rem);
     width: 550px;
     height: variabels.$height;
     input{
-      @include mixin.weather-input(0 17px, 1px solid #ccc, 1.07rem);
+      @include mixin.weather-input(0 17px, 1px solid variabels.$color-light-wiht, 1.07rem);
       height: variabels.$height;
       margin: 10px 0 20px 0!important;
 
     }
     button{
-      @include mixin.weather-input(10px 0,none, 1rem );
+      @include mixin.weather-input(10px 0,none, 1rem );//padding border i font-side
       cursor: pointer;
-      color: #fff;
-      background-color: variabels.$color-primary;
+      @include mixin.weather-color(variabels.$color-withe,variabels.$color-primary);//color i background
 
     }
     .separator{
@@ -52,6 +52,65 @@ h1{
 
   .weather-data{
     width: 100%;
+
+    .current-weather{
+
+      @include mixin.weather-color(variabels.$color-withe,variabels.$color-primary);//color i background
+      border-radius: 5px;
+      padding: 20px 70px 20px 20px;
+      justify-content: space-between;
+      display: flex;
+      .details{
+
+        h2{
+          font-size: 1.7rem;
+        }
+        h4{
+          font-size: 1rem;
+          margin-top:12px;
+          font-weight: 500;
+
+        }
+      }
+    }
+    .icon{
+      img{
+        max-width: 120px;
+        margin-top: -15px;
+        //@include mixin.weather-position(relative,-600px,-100px)//position right top
+
+
+      }
+      h4{
+        margin-top: -10px;
+        text-transform: capitalize;
+        //@include mixin.weather-position(relative,-600px,-100px)//position right top
+      }
+    }
+    .day-forecast{
+      .h2{
+        font-size: 1.5rem;
+        margin: 20px 0;
+      }
+      .weather-cards{
+        display: flex;
+        gap: 20px;
+        .card{
+          @include mixin.weather-color(variabels.$color-withe,#6c757D);//color i //background
+          padding: 18px 16px;
+          border-radius: 5px;
+          width: calc(100%/ 5);//1 / 5 parent
+          img{
+            max-width: 70px;
+            margin: 5px 0 -12px 0;
+
+          }
+
+
+        }
+      }
+    }
   }
 
 }
+//ff na zmienej
